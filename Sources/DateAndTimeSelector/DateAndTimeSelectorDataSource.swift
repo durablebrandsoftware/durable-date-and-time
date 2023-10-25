@@ -11,8 +11,8 @@ import Foundation
 public protocol DateAndTimeSelectorDataSource {
     
     /// The function that all data sources must implement, providing the `DateAndTimeSelector` with
-    /// `DateAndTimeSelectorEvents` to be displayed. The events returned should only be for the dates
+    /// `DateAndTimeSelectorActivities` to be displayed. The activities returned should only be for the dates
     /// on and between the given `starting` and `ending` dates.
-    func getDateAndTimeData(starting: Date, ending: Date) -> DateAndTimeSelectorEvents
+    func getDateAndTimeData(starting: Date, ending: Date) -> DateAndTimeSelectorActivities
 }
 

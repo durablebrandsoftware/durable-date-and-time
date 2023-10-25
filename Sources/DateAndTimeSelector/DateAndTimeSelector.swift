@@ -259,30 +259,30 @@ class DateAndTimeSelectorConfiguration {
 
 // MARK: - Data Used By the DateAndTimeSelector
 
-/// The complete set of event data the selector should use to visualize events on the calendar. This is the struct
+/// The complete set of activity data the selector should use to visualize activities on the calendar. This is the struct
 /// that should be returned by the optional `DateAndTimeSelectorDataSource` provided to the selector
 /// via its `getDateAndTimeData()` function.
-public struct DateAndTimeSelectorEvents {
+public struct DateAndTimeSelectorActivities {
     
-    public var events = [String: [DateAndTimeSelectorEvent]]()
+    public var activities = [String: [DateAndTimeSelectorActivity]]()
     
     public init() {}
     
-    public mutating func add(event: Date) {
-        let key = event.formattedAs(.abbreviatedMonthDayYear)
-        var dateEvents = events[key]
-        if dateEvents == nil { dateEvents = [DateAndTimeSelectorEvent]() }
-        dateEvents?.append(DateAndTimeSelectorEvent())
-        events[key] = dateEvents
+    public mutating func add(activityForDate date: Date) {
+        let key = date.formattedAs(.abbreviatedMonthDayYear)
+        var dateActivities = activities[key]
+        if dateActivities == nil { dateActivities = [DateAndTimeSelectorActivity]() }
+        dateActivities?.append(DateAndTimeSelectorActivity())
+        activities[key] = dateActivities
     }
 }
 
 
-/// The event data that's stored for each individual event on each day within the
-/// selector's `DateAndTimeSelectorEvents` data source.
-public struct DateAndTimeSelectorEvent {
+/// The activity data that's stored for each individual activity on each day within the
+/// selector's `DateAndTimeSelectorActivities` data source.
+public struct DateAndTimeSelectorActivity {
     public init() {}
-    // TODO: For future use, and future event properites that might help data visualization.
+    // TODO: For future use, and future event properties that might help data visualization.
 }
 
 

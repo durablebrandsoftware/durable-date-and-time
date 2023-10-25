@@ -9,12 +9,12 @@ import DurableDateAndTime
 
 class DemoAppSampleData: DateAndTimeSelectorDataSource {
     
-    static var data: DateAndTimeSelectorEvents!
+    static var data: DateAndTimeSelectorActivities!
     
-    func getDateAndTimeData(starting: Date, ending: Date) -> DateAndTimeSelectorEvents {
+    func getDateAndTimeData(starting: Date, ending: Date) -> DateAndTimeSelectorActivities {
         
         if DemoAppSampleData.data == nil {
-            DemoAppSampleData.data = DateAndTimeSelectorEvents()
+            DemoAppSampleData.data = DateAndTimeSelectorActivities()
 
             add(count: 5, inDays: -3)   // Three days ago
             add(count: 7, inDays: -2)   // Two days ago
@@ -31,7 +31,7 @@ class DemoAppSampleData: DateAndTimeSelectorDataSource {
     
     private func add(count: Int, inDays: Int) {
         for _ in 0..<count {
-            DemoAppSampleData.data.add(event: Date.currentDateAndTime.within(days: inDays))
+            DemoAppSampleData.data.add(activityForDate: Date.currentDateAndTime.within(days: inDays))
         }
     }
     

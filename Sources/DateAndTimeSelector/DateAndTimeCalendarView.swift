@@ -230,14 +230,14 @@ struct DateAndTimeCalendarView: View {
     }
     
     
-    /// Internal helper function that generates all the cell data for the calendar view gride, one cell for every day
+    /// Internal helper function that generates all the cell data for the calendar view grid, one cell for every day
     /// of the month that is currently being displayed.
     private func generateCalendarCellData(_ dataSource: DateAndTimeSelectorDataSource? = nil) -> [DateAndTimeSelectorCalendarCell] {
         
         let beginningOfMonth = navigationDate.beginningOfMonth
         let endOfMonth = navigationDate.endOfMonth
         
-        let events = (dataSource?.getDateAndTimeData(starting: beginningOfMonth, ending: endOfMonth) ?? DateAndTimeSelectorEvents()).events
+        let events = (dataSource?.getDateAndTimeData(starting: beginningOfMonth, ending: endOfMonth) ?? DateAndTimeSelectorActivities()).activities
 
         let weeksInMonth = navigationDate.weeksInMonth
         var newCells = [DateAndTimeSelectorCalendarCell]()
@@ -250,20 +250,6 @@ struct DateAndTimeCalendarView: View {
         
         return newCells
     }
-    
-    
-    /// Internal helper function that returns whether or not the current month being displayed by the calendar view is
-    /// the month of the current device date.
-    private var inCurrentMonthx: Bool {
-        return (navigationDate.beginningOfDay.month == Date.currentDateAndTime.beginningOfDay.month)
-    }
-    
-    
-    /// Internal helper function that returns whether or not the current year being displayed by the calendar view is
-    /// the month of the current device date.
-    private var inCurrentYearx: Bool {
-        return (navigationDate.beginningOfDay.year == Date.currentDateAndTime.beginningOfDay.year)
-    }
 
 }
 
@@ -271,6 +257,6 @@ struct DateAndTimeCalendarView: View {
 private struct DateAndTimeSelectorCalendarCell: Identifiable {
     public var id: String = UUID().uuidString
     public var date: Date
-    public var data: [DateAndTimeSelectorEvent]? = nil
+    public var data: [DateAndTimeSelectorActivity]? = nil
 }
 
