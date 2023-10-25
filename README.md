@@ -27,7 +27,7 @@ Note that the `DateAndTimeSelector` (see below) uses `Date.currentDateAndTime` i
 
 The `DateAndTimeSelector` is a custom SwiftUI component that provides UI for selecting dates and times. It is modeled after SwiftUI's `DatePicker` in that it provides both an **expanded (inline) version** that can be displayed directly inside a view, and a **button version** that displays a button that opens a popover for picking dates and times.
 
-The primary benefit of the included `DateAndTimeSelector` is its ability to visualize the amount of events in its calendar view to help users see how busy each day is. This is accomplished by providing the selector with a `DateAndTimeSelectorDataSource` via the `.dataSource(...)` view modifier:
+The primary benefit of the included `DateAndTimeSelector` is its ability to visualize the amount of activities in its calendar view to help users see how busy each day is. This is accomplished by providing the selector with a `DateAndTimeSelectorDataSource` via the `.dataSource(...)` view modifier:
 
 The following snippet shows how you would embed the expanded version of the selector in a `VStack`. using the selector's `.expanded()` modifier. (Removing the `.expanded()` modifier will cause the selector to display as a button in the `VStack`, which will open a popover for choosing the date.)
 
