@@ -1,4 +1,4 @@
-# **DurableDateAndTime** Swift Package
+# **`DurableDateAndTime`** Swift Package
 
 ## Overview
 A suite of useful date and time logic and utilities, plus a data-driven `DateAndTimeSelector` SwiftUI component for selecting dates and times.
@@ -14,6 +14,10 @@ This code is provided as **Swift Package** you can add to your Xcode project's "
 
 Or you can simply download the code in the `Sources` folder and add the files directly to your project if you do not want the versioning and update management provided by **Swift Package Manager**.
 
+Add the following import to your Swift source files to access its features:
+
+`import DurableDateAndTime`
+
 
 ## Extended `Date` Functionality
 
@@ -25,9 +29,9 @@ Doing this throughout your code will allow you to override and simulate a specif
 
 Note that the `DateAndTimeSelector` (see below) uses `Date.currentDateAndTime` internally so that you can control the current date and time it uses as well.
 
-## A SwiftUI `DateAndTimeSelector` Component
+## A New SwiftUI `DateAndTimeSelector` Component
 
-Also include in the package is a `DateAndTimeSelector` component for SwiftUI that provides a UI control for selecting dates and times. It is modeled after Apple's `DatePicker` in that it provides both an **expanded (inline) version** that can be displayed directly inside a view, and a **button version** that displays a button that opens a popover for picking dates and times.
+Also include in the package is a `DateAndTimeSelector` component for SwiftUI that provides a new UI control for selecting dates and times. It is modeled after Apple's `DatePicker` in that it provides both an **expanded (inline) version** that can be displayed directly inside a view, and a **button version** that displays a button that opens a popover for picking dates and times.
 
 The primary benefit of the new `DateAndTimeSelector` is its ability to visualize activities in its calendar view to help users see how busy each day is. This is accomplished by providing the selector with an optional `DateAndTimeSelectorDataSource` via the `.dataSource(...)` view modifier:
 
@@ -56,7 +60,7 @@ Also note that you may often want to provide a `.frame(height:)` (and perhaps a 
 
 ## Demo
 
-There is a more complete Xcode demo project (`Demo/Demo.xcodeproj`) included in this repo that you can compile and run to see the `DateAndTimeSelector` SwiftUI component working in all its various configurations. See the `DemoView.swift` file for the code that generates those variations.
+There is a more complete Xcode demo project (`Demo/Demo.xcodeproj`) included in this repo that you can compile and run to see the `DateAndTimeSelector` SwiftUI component working in some of its many configurations. See the `DemoView.swift` file for the code that generates those variations.
 
 ![demo](README_assets/demo.png)
 
